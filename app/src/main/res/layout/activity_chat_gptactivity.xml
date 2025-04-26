@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/chatGPT"
+    tools:context=".ChatGPTActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_layout"
+        android:layout_below="@+id/imageView5"
+        android:layout_marginTop="8dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:padding="8dp"
+        android:id="@+id/bottom_layout">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/prompt"
+            android:layout_centerInParent="true"
+            android:hint="Need help deciding what to eat?"
+            android:padding="16dp"
+            android:layout_toLeftOf="@id/send_btn"
+            android:background="@drawable/rounded_box"
+            />
+
+        <ImageButton
+            android:id="@+id/send_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="send"
+
+            android:padding="8dp"
+            android:src="@android:drawable/ic_menu_send" />
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="goBack"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+
+</RelativeLayout>
